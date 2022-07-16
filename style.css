@@ -1,0 +1,186 @@
+@import url(https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+:root {
+  --clr-primary-400: hsl(263 55% 52%);
+  --clr-secondary-400: hsl(217 19% 35%);
+  --clr-secondary-500: hsl(219 29% 14%);
+  --clr-neutral-100: hsl(0 0% 100%);
+  --clr-neutral-200: hsl(210 46% 95%);
+  --clr-neutral-300: hsl(0 0% 81%);
+
+  --ff-primary: "Barlow Semi Condensed", sans-serif;
+
+  --fw-400: 500;
+  --fw-700: 600;
+
+  --fs-300: 0.6875rem;
+  --fs-400: 0.8125rem;
+  --fs-500: 1.25rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: var(--ff-primary);
+  font-weight: 400;
+
+  background-color: var(--clr-neutral-200);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1em);
+}
+
+.flow > *:not(:first-child) {     
+  margin-top: var(--flow-spacer, 1em);
+}
+
+.bg-primary-400 {
+  background: var(--clr-primary-400);
+}
+.bg-secondary-400 {
+  background: var(--clr-secondary-400);
+}
+.bg-secondary-500 {
+  background: var(--clr-secondary-500);
+}
+.bg-neutral-100 {
+  background: var(--clr-neutral-100);
+}
+
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+.text-secondary-400 {
+  color: var(--clr-secondary-400);
+}
+.border-primary-400 {
+  border: 2px solid #a775f1;
+}
+
+.grid-col-span-2{
+    grid-column: span 2;
+}
+
+.testomenial-grid {
+  height: 30rem;
+  width: 60rem;
+  display: grid;
+  gap: 1.5em;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+  padding-block: 2rem;
+  width: min(95%, 70rem);
+  margin-inline: auto;
+}
+
+
+.testomenial {
+  font-size: var(--fs-400);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 2.5rem 3.75rem 3rem -3rem var(--Very-dark-grayish-blue) / 0.25;
+}
+
+.testomenial:nth-child(1) {
+  grid-area: one;
+}
+.testomenial:nth-child(2) {
+  grid-area: two;
+}
+.testomenial:nth-child(3) {
+  grid-area: three;
+}
+.testomenial:nth-child(4) {
+  grid-area: four;
+}
+.testomenial:nth-child(5) {
+  grid-area: five;
+}
+
+@media screen and (min-width: 33em) {
+  .testomenial-grid {
+    grid-template-areas: 
+    "one one"
+    "two three"
+    "five five"
+    "four four";
+  }
+}
+
+@media screen and (min-width: 38em) {
+  .testomenial-grid {
+    grid-template-areas: 
+    "one one"
+    "two five" 
+    "three five" 
+    "four four";
+  }
+}
+
+@media screen and (min-width: 54em) {
+  .testomenial-grid {
+    grid-template-areas: 
+    "one one two" 
+    "five five five" 
+    "three four four";
+  }
+}
+@media screen and (min-width: 75em) {
+  .testomenial-grid {
+    grid-template-areas: 
+    "one one two five" 
+    "three four four five";
+  }
+}
+
+.testomenial.quote {
+  background-image: url("./images/bg-pattern-quotation.svg");
+  background-position: top right 10%;
+  background-repeat: no-repeat;
+}
+
+.testomenial img {
+  width: 1.75rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.testomenial .name {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+  line-height: 1;
+}
+
+.testomenial .position {
+  font-size: var(--fs-300);
+  opacity: 0.5;
+}
+
+.testomenial > p:first-of-type {
+  font-size: var(--fs-500);
+  line-height: 1.2;
+  font-weight: var(--fw-700);
+}
+
+.testomenial > p:last-of-type {
+  opacity: 0.7;
+}
